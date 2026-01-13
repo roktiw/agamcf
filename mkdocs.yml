@@ -1,0 +1,42 @@
+site_name: Platform Documentation
+site_description: "Public platform documentation, API registry, and architecture guides."
+site_author: "Platform Team"
+repo_url: "https://github.com/AGA/multicloud-vending-machine"
+edit_uri: "edit/main/docs/"
+
+docs_dir: docs
+site_dir: public
+
+theme:
+  name: material
+  palette: 
+    - scheme: default
+      primary: deep purple
+      accent: teal 
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
