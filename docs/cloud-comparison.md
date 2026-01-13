@@ -15,9 +15,10 @@
 
 ## 🧭 Legend & Scoring
 
-*   🟩 **Green:** Excellent / Market Leader / Native.
-*   🟨 **Yellow:** Good / competitive / Requires extra config.
-*   🟥 **Red:** Lagging / Expensive / Complex.
+*   **Score (0-10):** Quantitative rating based on maturity, performance, and ease of use.
+*   🟩 **Green (8-10):** Excellent / Market Leader / Native.
+*   🟨 **Yellow (5-7):** Good / Competitive / Requires extra config.
+*   🟥 **Red (0-4):** Lagging / Expensive / Complex.
 
 ---
 
@@ -25,13 +26,18 @@
 
 | Feature | 🟧 AWS (Amazon) | 🟦 Azure (Microsoft) | 🟩 GCP (Google) | Verdict |
 | :--- | :--- | :--- | :--- | :--- |
-| **Product Identity** | **Leader**<br>Origin: Retail/Infra<br>Market Share: #1 | **Challenger**<br>Origin: Enterprise/OS<br>Market Share: #2 | **Innovator**<br>Origin: Search/Data<br>Market Share: #3 | AWS is the standard, Azure is for corps, GCP is for data. |
-| **CPU Architecture** | 🟩 **Graviton (ARM)**<br>+ Intel/AMD | 🟨 **Cobalt (ARM)**<br>+ Intel/AMD | 🟨 **Axion (ARM)**<br>+ Intel/AMD | AWS Graviton is generations ahead in maturity. |
-| **GPU / AI Chips** | 🟨 **Nvidia + Trainium/Inferentia**<br>Broadest choice. | 🟨 **Nvidia + Maia**<br>Strongest for massive clusters. | 🟩 **Nvidia + TPU**<br>TPUs are unrivaled for price/perf in ML. | GCP TPUs win for pure ML training/inference costs. |
-| **RAM / Memory** | 🟩 **High Memory**<br>Up to 24TB (u-instances). | 🟩 **M-Series**<br>Up to 24TB+. Good for SAP HANA. | 🟨 **Memory-Optimized**<br>Up to 12TB. | AWS & Azure tie for massive SAP/DB workloads. |
-| **Security (Hardware)** | 🟩 **Nitro System**<br>Dedicated hardware root of trust. | 🟨 **Pluton / Cerberus**<br>Firmware/TPM focus. | 🟩 **Titan Chip**<br>Hardware root of trust verification. | AWS Nitro and GCP Titan are the gold standards. |
-| **IAM (Identity)** | 🟨 **Complex**<br>Global, User/Role-based. Steep curve. | 🟩 **Entra ID (AD)**<br>Directory-based. Familiar to admins. | 🟩 **Unified**<br>Project-based. Simplest hierarchy. | GCP has the cleanest model; Azure wins for corp integration. |
-| **System Bus / Offload** | 🟩 **Nitro Card**<br>Offloads Network, Storage, Security. | 🟨 **Boost / FPGA**<br>Accelerated Networking. | 🟨 **Titanium / Andromeda**<br>SDN-focused offload. | AWS Nitro is the most mature virtualization offload. |
+| **Product Identity** | **10/10** 🟩<br>Market Share: #1<br>The "Standard" choice. | **9/10** 🟩<br>Market Share: #2<br>The "Corporate" choice. | **8/10** 🟩<br>Market Share: #3<br>The "Data" choice. | AWS is the default; Azure for Office 365 shops. |
+| **CPU Architecture** | **10/10** 🟩<br>**Graviton (ARM)**<br>Mature ecosystem (Gen 4). | **8/10** 🟩<br>**Cobalt (ARM)**<br>Newer, catching up. | **8/10** 🟩<br>**Axion (ARM)**<br>New entrant. | AWS Graviton is generations ahead in maturity. |
+| **GPU / AI Chips** | **9/10** 🟩<br>Nvidia + Trainium/Inferentia<br>Broadest selection. | **9/10** 🟩<br>Nvidia + Maia<br>Best for super-clusters (InfiniBand). | **10/10** 🟩<br>Nvidia + **TPU**<br>Unrivaled price/perf for ML. | GCP TPUs win for pure ML training costs. |
+| **Kubernetes (K8s)** | **7/10** 🟨<br>**EKS**<br>Manual, "Do it yourself" feel. | **9/10** 🟩<br>**AKS**<br>Great dev tools integration. | **10/10** 🟩<br>**GKE**<br>The Gold Standard. It just works. | GKE is lightyears ahead in usability; EKS is robust but complex. |
+| **Serverless** | **10/10** 🟩<br>**Lambda**<br>The pioneer. Massive ecosystem. | **8/10** 🟩<br>**Azure Functions**<br> great for VNET/Enterprise app. | **10/10** 🟩<br>**Cloud Run**<br>Best container-to-url experience. | Lambda for functions; Cloud Run for containers. |
+| **Network Backbone** | **9/10** 🟩<br>Massive global footprint.<br>Direct Connect is standard. | **8/10** 🟩<br>Strong, but historically some outages.<br>Virtual WAN is powerful. | **10/10** 🟩<br>**Premium Tier**<br>Traffic stays on Google's private fiber. | GCP's private network is the fastest and lowest latency. |
+| **Storage Ecosystem** | **10/10** 🟩<br>**S3 & EBS**<br>The industry definition of object storage. | **9/10** 🟩<br>**Blob & Managed Disks**<br>Ultra Disk is very fast. | **9/10** 🟩<br>**GCS & Persistent Disk**<br>Simple resizing, no pre-warming needed. | AWS S3 is the benchmark; GCP disks are easiest to manage. |
+| **RAM / Memory** | **10/10** 🟩<br>Up to 24TB (u-instances).<br>High Memory DBs. | **10/10** 🟩<br>Up to 24TB+.<br>King of SAP HANA workloads. | **8/10** 🟩<br>Up to 12TB.<br>Sufficient for most. | AWS & Azure tie for massive in-memory DBs. |
+| **Security (Hardware)** | **10/10** 🟩<br>**Nitro System**<br>Hardware root of trust. | **8/10** 🟩<br>**Pluton / Cerberus**<br>Firmware focus. | **10/10** 🟩<br>**Titan Chip**<br>Hardware supply chain security. | AWS Nitro and GCP Titan are the benchmarks. |
+| **IAM (Identity)** | **7/10** 🟨<br>Powerful but steep learning curve.<br>JSON policies. | **9/10** 🟩<br>**Entra ID**<br>Seamless for Windows admins. | **10/10** 🟩<br>Unified Project Model.<br>Cleanest hierarchy. | GCP is simplest; Azure best for Corp; AWS most granular. |
+| **System Bus / Offload** | **10/10** 🟩<br>**Nitro Card**<br>Mature offload (Net/Storage). | **8/10** 🟩<br>**Azure Boost**<br>Newer hardware offload. | **8/10** 🟩<br>**Titanium**<br>Software-Defined excellence. | AWS Nitro is still the most mature offload system. |
+| **TOTAL SCORE** | **🏆 93/100** | **86/100** | **90/100** | **AWS Wins on maturity; GCP on Tech; Azure on Integration.** |
 
 ---
 

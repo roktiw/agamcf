@@ -1,0 +1,38 @@
+name: Documentation CI
+
+on:
+  pull_request:
+    paths:
+      - 'catalog/services.yml'
+      - 'tools/render_catalog.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Render Documentation
+        run: |
+          chmod +x tools/render_catalog.py
+          ./tools/render_catalog.py
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code || echo "::set-output name=changes::true"
+
+      - name: Commit changes (Auto-fix)
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add catalog/*.md
+          git commit -m "docs: auto-generate catalog markdown from yaml"
+          git push

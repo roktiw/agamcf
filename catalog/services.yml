@@ -1,0 +1,86 @@
+# 🧠 Capability Catalog (Source of Truth)
+# This file drives the generation of markdown documentation.
+# DO NOT EDIT DOCS MANUALLY. Edit this file and run `tools/render_catalog.py`.
+
+capabilities:
+  - id: product_group
+    name: "Product Group (Container)"
+    criticality: 5
+    description: "The logical container for all resources belonging to a product."
+    providers:
+      azure: "Resource Group"
+      aws: "Resource Group / Account"
+      gcp: "Project"
+
+  - id: compute_paas
+    name: "Compute (PaaS)"
+    criticality: 4
+    description: "Managed platform for hosting web applications."
+    providers:
+      azure: "App Service / ACA"
+      aws: "Elastic Beanstalk / Fargate"
+      gcp: "App Engine / Cloud Run"
+
+  - id: compute_k8s
+    name: "Compute (Kubernetes)"
+    criticality: 5
+    description: "Managed Kubernetes cluster."
+    providers:
+      azure: "AKS"
+      aws: "EKS"
+      gcp: "GKE"
+
+  - id: object_storage
+    name: "Object Storage"
+    criticality: 5
+    description: "Scalable storage for unstructured data (blobs)."
+    providers:
+      azure: "Blob Storage"
+      aws: "S3"
+      gcp: "Cloud Storage"
+
+  - id: database_sql
+    name: "Database (Relational)"
+    criticality: 4
+    description: "Managed SQL database."
+    providers:
+      azure: "Azure SQL Database"
+      aws: "RDS"
+      gcp: "Cloud SQL"
+
+  - id: identity
+    name: "Identity & Access"
+    criticality: 5
+    description: "Workload identity for secure access."
+    providers:
+      azure: "Entra ID (Managed ID)"
+      aws: "IAM Role"
+      gcp: "IAM Service Account"
+
+  - id: secrets
+    name: "Secret Management"
+    criticality: 5
+    description: "Secure storage for keys and secrets."
+    providers:
+      azure: "Key Vault"
+      aws: "Secrets Manager"
+      gcp: "Secret Manager"
+
+sizing:
+  small:
+    description: "For individual development, prototyping, and experimentation."
+    environment: "dev"
+    cost_driver: "Lowest tier compute, Local Redundancy."
+    approx_cost: "$12 - $20 / mo"
+  
+  medium:
+    description: "For integration testing, UAT, and staging."
+    environment: "test"
+    cost_driver: "Standard compute, Local Redundancy, Basic Availability."
+    approx_cost: "$80 - $150 / mo"
+
+  large:
+    description: "For production workloads requiring High Availability."
+    environment: "prod"
+    cost_driver: "Premium compute, Global Redundancy (GRS), SLAs."
+    approx_cost: "$200+ / mo"
